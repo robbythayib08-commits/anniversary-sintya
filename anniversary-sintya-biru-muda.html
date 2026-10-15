@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our First Anniversary ❤️</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap");
+      :root {
+        --pink: #8ecbff;
+        --light-pink: #e4f3ff;
+        --purple: #72b7f5;
+        --dark: #234467;
+        --white: #fafdff;
+        --blue: #62adf2;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        background: #eaf5ff;
+        color: var(--dark);
+        overflow-x: hidden;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 20;
+        padding: 16px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(43, 91, 139, 0.9);
+        backdrop-filter: blur(12px);
+        color: white;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+      .brand span {
+        color: #d9efff;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+      .hero {
+        min-height: 100svh;
+        padding: 110px 20px 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        color: #234467;
+        background:
+          radial-gradient(ellipse at 20% 80%, #c4e5ff 0%, transparent 32%),
+          radial-gradient(ellipse at 80% 30%, #a8d7ff 0%, transparent 34%),
+          linear-gradient(145deg, #edf8ff, #b9ddff 52%, #83c2f8);
+      }
+      .hero::before {
+        content: "✦  ·  ✧  ·  ✦  ·  ˚  ·  ✧  ·  ✦";
+        position: absolute;
+        inset: 13% 0 auto;
+        font-size: 25px;
+        letter-spacing: 18px;
+        opacity: 0.8;
+        animation: twinkle 3s infinite alternate;
+      }
+      .hero-content {
+        max-width: 720px;
+        position: relative;
+        z-index: 2;
+      }
+      .eyebrow {
+        display: inline-block;
+        padding: 9px 18px;
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        border-radius: 30px;
+        margin-bottom: 25px;
+      }
+      h1 {
+        font-size: clamp(2.8rem, 8vw, 5.5rem);
+        line-height: 1.12;
+        margin-bottom: 15px;
+        text-shadow: 0 5px 20px #23446722;
+      }
+      .script {
+        font-family: "Pacifico", cursive;
+        color: #347fc0;
+        font-weight: 400;
+      }
+      .hero p {
+        font-size: 1.08rem;
+        line-height: 1.9;
+        max-width: 520px;
+        margin: 20px auto;
+      }
+      .btn {
+        display: inline-block;
+        padding: 14px 27px;
+        border-radius: 30px;
+        background: #62adf2;
+        color: white;
+        font-size: 1rem;
+        font-weight: 800;
+        box-shadow: 0 7px 20px #438fd440;
+        transition: 0.25s;
+      }
+      .btn:hover {
+        transform: translateY(-3px) scale(1.03);
+        background: #438fd4;
+      }
+      .btn-light {
+        background: white;
+        color: #347fc0;
+      }
+      .btn-light:hover {
+        background: #dcefff;
+      }
+      .couple {
+        font-size: clamp(4rem, 12vw, 7rem);
+        margin: 18px 0;
+        filter: drop-shadow(0 10px 15px #23446725);
+        animation: float 3s ease-in-out infinite;
+      }
+      .section {
+        padding: 90px 7%;
+        text-align: center;
+      }
+      .section h2 {
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+        margin-bottom: 14px;
+      }
+      .section-desc {
+        max-width: 600px;
+        margin: 0 auto 35px;
+        line-height: 1.8;
+        color: #587b9e;
+      }
+      .story {
+        background: linear-gradient(180deg, #f5fbff, #e1f1ff);
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 28px 20px;
+        border: 1px solid #c6e4ff;
+        border-radius: 24px;
+        box-shadow: 0 10px 30px #5b9ed010;
+        transition: transform 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-7px);
+      }
+      .card .emoji {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+      }
+      .card h3 {
+        margin-bottom: 10px;
+      }
+      .card p {
+        color: #587b9e;
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+      .memories {
+        background: #eaf5ff;
+      }
+      .memory-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 15px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .memory {
+        padding: 25px 12px;
+        min-height: 170px;
+        border-radius: 20px;
+        background: linear-gradient(145deg, #dcefff, #fafdff);
+        border: 1px solid #c6e4ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+      .memory span {
+        font-size: 2.8rem;
+      }
+      .memory strong {
+        font-size: 0.95rem;
+      }
+      .letter-section {
+        background: linear-gradient(140deg, #e8f4ff, #d5ebff);
+      }
+      .envelope {
+        max-width: 540px;
+        margin: 30px auto 0;
+        padding: 30px 25px;
+        background: #fafdff;
+        border: 2px dashed #8ecbff;
+        border-radius: 25px;
+        box-shadow: 0 15px 40px #5b9ed018;
+      }
+      .envelope-icon {
+        font-size: 4.5rem;
+        margin-bottom: 12px;
+        animation: float 2.5s infinite ease-in-out;
+      }
+      .letter-text {
+        display: none;
+        text-align: left;
+        line-height: 2;
+        margin-top: 25px;
+        animation: reveal 0.8s ease;
+      }
+      .letter-text.show {
+        display: block;
+      }
+      .letter-text p {
+        margin-bottom: 13px;
+      }
+      .proposal {
+        background:
+          radial-gradient(circle at 20% 20%, #d4ebff 0, transparent 32%),
+          linear-gradient(145deg, #b6dcff, #80bdf2 55%, #e0f1ff);
+        color: #234467;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .proposal-box {
+        width: min(100%, 680px);
+        padding: 45px 25px;
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        box-shadow: 0 20px 60px #356d9c20;
+      }
+      .big-heart {
+        font-size: 4rem;
+        display: block;
+        animation: heartbeat 1.2s infinite;
+        margin-bottom: 15px;
+      }
+      .proposal h2 {
+        margin-bottom: 18px;
+      }
+      .proposal p {
+        line-height: 1.9;
+        max-width: 490px;
+        margin: 0 auto 22px;
+      }
+      .answer-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 25px;
+      }
+      .answer-buttons button {
+        min-width: 145px;
+      }
+      #response {
+        display: none;
+        margin: 25px auto 0;
+        font-size: 1.2rem;
+        font-weight: 800;
+        line-height: 1.8;
+        animation: reveal 0.6s ease;
+      }
+      footer {
+        background: #315579;
+        color: #e6f4ff;
+        text-align: center;
+        padding: 28px 15px;
+        line-height: 1.9;
+      }
+      .heart {
+        position: fixed;
+        z-index: 30;
+        bottom: -40px;
+        pointer-events: none;
+        animation: rise linear forwards;
+      }
+      .confetti {
+        position: fixed;
+        top: -20px;
+        z-index: 40;
+        pointer-events: none;
+        animation: fall 3s linear forwards;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-2deg);
+        }
+        50% {
+          transform: translateY(-12px) rotate(2deg);
+        }
+      }
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        15% {
+          transform: scale(1.15);
+        }
+        30% {
+          transform: scale(1);
+        }
+        45% {
+          transform: scale(1.1);
+        }
+      }
+      @keyframes rise {
+        to {
+          transform: translateY(-115vh) rotate(35deg);
+          opacity: 0;
+        }
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(650deg);
+          opacity: 0;
+        }
+      }
+      @keyframes twinkle {
+        from {
+          opacity: 0.35;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 700px) {
+        nav {
+          padding: 14px 5%;
+        }
+        nav a {
+          margin-left: 9px;
+          font-size: 0.78rem;
+        }
+        .brand {
+          font-size: 0.95rem;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+          max-width: 420px;
+        }
+        .memory-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .section {
+          padding: 70px 6%;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="brand">Anniversary <span>♡</span></div>
+      <div>
+        <a href="#home">Beranda</a><a href="#cerita">Cerita</a
+        ><a href="#surat">Surat</a>
+      </div>
+    </nav>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">♡ A little surprise for you ♡</div>
+        <h1>Happy <span class="script">1st</span><br />Anniversary</h1>
+        <div class="couple">🧸💕🐻</div>
+        <h2 class="script" style="font-size: clamp(2rem, 6vw, 3.4rem)">
+          Sintya Arvika
+        </h2>
+        <p>
+          Ga Kerasa Ya Sudah Satu Tahun Kita Bersama.<br />Terima kasih sudah
+          menjadi bagian terindah dalam cerita hidupku ♡
+        </p>
+        <button class="btn" onclick="mulaiKejutan()">
+          Buka kejutan kita 💌
+        </button>
+      </div>
+    </section>
+    <section class="section story" id="cerita">
+      <h2>One year together 💗</h2>
+      <p class="section-desc">
+        Kalau ditanya apa hal terbaik yang terjadi selama setahun ini, salah
+        satu jawabanku pasti karena aku mengenal kamu, Sintya.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <div class="emoji">🌷</div>
+          <h3>Terima Kasih</h3>
+          <p>
+            Terima kasih sudah hadir, sudah bertahan, dan sudah menjadi
+            seseorang yang begitu berarti buat aku.
+          </p>
+        </div>
+        <div class="card">
+          <div class="emoji">🧸</div>
+          <h3>Tentang Kita</h3>
+          <p>
+            Hubungan kita emang masih belum sempurna masing suka bertengkar,
+            tapi aku ingin terus belajar memahami kamu dan menjaga hubungan ini.
+          </p>
+        </div>
+        <div class="card">
+          <div class="emoji">🌙</div>
+          <h3>Untuk Esok</h3>
+          <p>
+            Semoga masih ada banyak cerita, tawa, pelukan, dan hari-hari indah
+            yang bisa kita lewati bersama.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section letter-section" id="surat">
+      <h2>Surat Kecil Untukmu 💌</h2>
+      <p class="section-desc">
+        Ada sesuatu yang ingin aku sampaikan dari hati.
+      </p>
+      <div class="envelope">
+        <div class="envelope-icon">💌</div>
+        <h3>Untuk Sintya Arvika ♡</h3>
+        <p style="margin: 12px 0 20px">
+          Ada surat yang khusus aku siapkan untuk kamu.
+        </p>
+        <button class="btn" id="openLetter" onclick="bukaSurat()">
+          Buka suratnya 💗
+        </button>
+        <div class="letter-text" id="letterText">
+          <p>Hai, Sintya sayangku. ❤️</p>
+          <p>
+            Selamat anniversary kita cantikku. Nggak terasa ya, kita sudah
+            sampai di titik ini. Aku senang bisa mengenal kamu dan berbagi
+            banyak cerita sama kamu selama satu tahun ini.
+          </p>
+          <p>
+            Aku tahu aku bukan orang yang selalu sempurna. Mungkin ada kata-kata
+            atau sikapku yang pernah bikin kamu sedih. Tapi aku mau terus
+            belajar jadi lebih baik, bukan cuma buat diriku sendiri, tapi juga
+            buat kita.
+          </p>
+          <p>
+            Terima kasih karena sudah menjadi bagian dari hariku. Aku berharap
+            kita bisa terus saling support ya, saling memahami, dan tetap
+            memilih satu sama lain meskipun keadaan kadang nggak selalu mudah.
+          </p>
+          <p>
+            Kalau suatu hari nanti kita membaca surat ini lagi, aku berharap
+            kita masih bisa tersenyum dan berkata, "Ternyata kita sudah sejauh
+            ini, ya"
+          </p>
+          <p>
+            Aku sayang banget sama kamu, Hari ini, besok, dan semoga di banyak
+            hari yang akan datang. 💗
+          </p>
+          <p style="text-align: right">
+            Dengan penuh sayang,<br /><strong>Obby ♡</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section proposal" id="proposal">
+      <div class="proposal-box">
+        <span class="big-heart">💖</span>
+        <p class="script" style="font-size: 1.4rem">Sintya Arvika...</p>
+        <h2>Mau terus sama aku?</h2>
+        <p>
+          Satu tahun sudah kita lewati. Aku nggak tahu semua hal yang akan
+          terjadi nanti, tapi aku ingin terus berusaha, tumbuh, dan membuat
+          lebih banyak kenangan indah sama kamu.<br /><strong
+            >Mau lanjut bikin cerita bersama aku?</strong
+          >
+        </p>
+        <div class="answer-buttons">
+          <button class="btn" onclick="jawabIya()">Iya, dong! ❤️</button
+          ><button class="btn btn-light" onclick="jawabSelalu()">
+            Mau, dong! 🧸
+          </button>
+        </div>
+        <div id="response"></div>
+      </div>
+    </section>
+    <footer>
+      Dibuat dengan sepenuh hati untuk Sintya Arvika 💗<br />Happy 1st
+      Anniversary ♡
+    </footer>
+    <script>
+      function buatHati() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.textContent = ["💗", "💕", "💖", "♡", "🌸"][
+          Math.floor(Math.random() * 5)
+        ];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = 16 + Math.random() * 20 + "px";
+        heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 8500);
+      }
+      setInterval(buatHati, 650);
+      function mulaiKejutan() {
+        document
+          .getElementById("cerita")
+          .scrollIntoView({ behavior: "smooth" });
+        hujanHati();
+      }
+      function bukaSurat() {
+        const surat = document.getElementById("letterText");
+        const tombol = document.getElementById("openLetter");
+        surat.classList.toggle("show");
+        if (surat.classList.contains("show")) {
+          tombol.textContent = "Tutup surat 💌";
+          hujanHati();
+        } else {
+          tombol.textContent = "Buka suratnya 💗";
+        }
+      }
+      function hujanHati() {
+        for (let i = 0; i < 30; i++) {
+          setTimeout(() => {
+            const heart = document.createElement("div");
+            heart.className = "confetti";
+            heart.textContent = ["💗", "💖", "💕", "🌸", "✨"][
+              Math.floor(Math.random() * 5)
+            ];
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = 16 + Math.random() * 22 + "px";
+            heart.style.animationDuration = 2 + Math.random() * 2 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4500);
+          }, i * 65);
+        }
+      }
+      function jawabIya() {
+        tampilkanJawaban(
+          "YEEEAY! 🥹💖",
+          "Sini peluk jauh dulu! Makasih ya, Sayang. Semoga kita terus saling memilih dan menjaga satu sama lain. I love you 💗",
+        );
+      }
+      function jawabSelalu() {
+        tampilkanJawaban(
+          "JANJI YA? 🧸❤️",
+          "Aku juga mau terus sama kamu. Semoga kita masih terus bersama, penuh tawa dan selalu punya alasan untuk saling menyayangi. Love you 💕",
+        );
+      }
+      function tampilkanJawaban(judul, pesan) {
+        const response = document.getElementById("response");
+        response.innerHTML = "<strong>" + judul + "</strong><br>" + pesan;
+        response.style.display = "block";
+        hujanHati();
+        response.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    </script>
+  </body>
+</html>
