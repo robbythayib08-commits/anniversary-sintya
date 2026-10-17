@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background-color: white;
+        color: #333;
+      }
+
+      nav {
+        background-color: #2e7d32;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 60px;
+      }
+
+      .fix {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: black;
+      }
+
+      .judul {
+        text-align: center;
+        padding: 60px 20px 30px;
+      }
+      .judul h1 {
+        margin-bottom: 15px;
+      }
+
+      .daftar {
+        text-align: center;
+        padding: 60px 20px 30px;
+      }
+
+      .daftar h1 {
+        color: #2e7d32;
+        margin-bottom: 15px;
+      }
+
+      .daftar-gunung {
+        display: flex;
+        gap: 20px;
+        padding: 20px 50px;
+        flex-wrap: wrap;
+        max-width: 1300px;
+        margin: auto;
+      }
+
+      .card {
+        width: 350px;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card h2 {
+        padding: 5px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      /* Tampilan HP */
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px;
+        }
+
+        .fix {
+          font-size: 22px;
+        }
+
+        nav ul {
+          gap: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        nav ul li a {
+          font-size: 14px;
+        }
+
+        .daftar {
+          padding: 35px 15px 20px;
+        }
+
+        .daftar h1 {
+          font-size: 25px;
+        }
+
+        .daftar p {
+          font-size: 14px;
+        }
+
+        .daftar-gunung {
+          padding: 15px;
+          gap: 20px;
+        }
+
+        .card {
+          width: 100%;
+        }
+
+        .card img {
+          height: 220px;
+        }
+
+        .card h2 {
+          font-size: 20px;
+        }
+
+        button {
+          font-size: 16px;
+          padding: 8px;
+        }
+      }
+
+      button {
+        background-color: white;
+        color: black;
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+
+      button:hover {
+        background-color: #1b5e20;
+        color: white;
+      }
+
+      .detail a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .detail a:hover {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="fix">Gunung Indonesia</div>
+      <ul>
+        <li>
+          <a href="beranda.html">Beranda</a>
+        </li>
+
+        <li>
+          <a href="gunung.html">Gunung</a>
+        </li>
+
+        <li>
+          <a href="blog.html">Blog</a>
+        </li>
+
+        <li>
+          <a href="tentang.html">Tentang</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="daftar">
+      <h1>DAFTAR GUNUNG DI INDONESIA</h1>
+      <p>Temukan berbagai informasi tentang gunung yang ingin di daki</p>
+    </section>
+    <section class="daftar-gunung">
+      <div class="card">
+        <img src="../image/lawu.jpeg" alt="Gunung Lawu" />
+        <h2>Gunung Lawu</h2>
+        <p style="text-align: center">3.265 MDPL - Jawa Tengah</p>
+        <button class="detail">
+          <a href="../detail/lawu.html">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="../image/bromo.jpeg" alt="Gunung Bromo" />
+        <h2>Gunung Bromo</h2>
+        <p style="text-align: center">2.329 MDPL - Jawa Timur</p>
+        <button class="detail">
+          <a href="../detail/bromo.html">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="..//image/ciremai.jpeg" alt="Gunung Ciremai" />
+        <h2>Gunung Ciremai</h2>
+        <p style="text-align: center">3.078 MDPL — Jawa Barat</p>
+        <button class="detail">
+          <a href="#">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="../image/gede.jpeg" alt="Gunung Gede" />
+        <h2>Gunung Gede</h2>
+        <p style="text-align: center">2.958 MDPL — Jawa Barat</p>
+        <button class="detail">
+          <a href="#">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="../image/merbabu.jpeg" alt="Gunung Merbabu" />
+        <h2>Gunung Merbabu</h2>
+        <p style="text-align: center">3.142 MDPL — Jawa Tengah</p>
+        <button class="detail">
+          <a href="#">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="..//image/papandayan.jpeg" alt="Gunung Papandayan" />
+        <h2>Gunung Papandayan</h2>
+        <p style="text-align: center">2.665 MDPL — Jawa Barat</p>
+        <button class="detail">
+          <a href="#">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="../image/prau.jpeg" alt="Gunung Prau" />
+        <h2>Gunung Prau</h2>
+        <p style="text-align: center">2.590 MDPL — Jawa Tengah</p>
+        <button class="detail">
+          <a href="#">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="../image/rinjani.jpeg" alt="Gunung Rinjani" />
+        <h2>Gunung Rinjani</h2>
+        <p style="text-align: center">3.726 MDPL — Nusa Tenggara Barat</p>
+        <button class="detail">
+          <a href="#">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="../image/semeru.jpeg" alt="Gunung Semeru" />
+        <h2>Gunung Semeru</h2>
+        <p style="text-align: center">3.676 MDPL — Jawa Timur</p>
+        <button class="detail">
+          <a href="#">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="../image/sindoro.jpeg" alt="Gunung Sindoro" />
+        <h2>Gunung Sindoro</h2>
+        <p style="text-align: center">3.153 MDPL — Jawa Tengah</p>
+        <button class="detail">
+          <a href="#">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="../image/slamet.jpeg" alt="Gunung Slamet" />
+        <h2>Gunung Slamet</h2>
+        <p style="text-align: center">3.428 MDPL — Jawa Tengah</p>
+        <button class="detail">
+          <a href="#">Detail</a>
+        </button>
+      </div>
+
+      <div class="card">
+        <img src="..//image/sumbing.jpeg" alt="Gunung Sumbing" />
+        <h2>Gunung Sumbing</h2>
+        <p style="text-align: center">3.371 MDPL — Jawa Tengah</p>
+        <button class="detail">
+          <a href="#">Detail</a>
+        </button>
+      </div>
+    </section>
+  </body>
+</html>
