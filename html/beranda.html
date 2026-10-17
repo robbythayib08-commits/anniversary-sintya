@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Gunung Indonesia</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        color: #333;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("../image/bg.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      nav {
+        background-color: #2e7d32;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 60px;
+      }
+
+      .fix {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: black;
+      }
+
+      .judul {
+        text-align: center;
+        padding: 200px 5px 10px;
+      }
+      .judul h1 {
+        color: #2e7d32;
+        margin-bottom: 10px;
+      }
+
+      /* Tampilan HP */
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px;
+        }
+
+        .fix {
+          font-size: 22px;
+        }
+
+        nav ul {
+          gap: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        nav ul li a {
+          font-size: 14px;
+        }
+
+        .daftar {
+          padding: 35px 15px 20px;
+        }
+
+        .daftar h1 {
+          font-size: 25px;
+        }
+
+        .daftar p {
+          font-size: 14px;
+        }
+
+        .daftar-gunung {
+          padding: 15px;
+          gap: 20px;
+        }
+
+        .card {
+          width: 100%;
+        }
+
+        .card img {
+          height: 220px;
+        }
+
+        .card h2 {
+          font-size: 20px;
+        }
+
+        button {
+          font-size: 16px;
+          padding: 8px;
+        }
+      }
+
+      .jelajah {
+        background-color: #2e7d32;
+        margin-top: 20px;
+        border: bold;
+        padding: 10px 20px;
+        font-size: 20px;
+      }
+
+      .jelajah a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .jelajah a:hover {
+        background-color: #2e7d32;
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="fix">Gunung Indonesia</div>
+      <ul>
+        <li>
+          <a href="beranda.html">Beranda</a>
+        </li>
+
+        <li>
+          <a href="gunung.html">Gunung</a>
+        </li>
+
+        <li>
+          <a href="blog.html">Blog</a>
+        </li>
+
+        <li>
+          <a href="tentang.html">Tentang</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="judul">
+      <h1>GUNUNG DI INDONESIA</h1>
+      <p>Temukan berbagai informasi tentang gunung di Indonesia</p>
+      <button class="jelajah">
+        <a href="gunung.html">Mulai Mendaki</a>
+      </button>
+    </section>
+  </body>
+</html>

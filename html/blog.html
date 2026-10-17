@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blog - Gunung Indonesia</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background-color: #f7f9f6;
+        color: #333;
+        line-height: 1.7;
+      }
+
+      nav {
+        background-color: #2e7d32;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 60px;
+      }
+
+      .fix {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #c8e6c9;
+      }
+
+      .judul {
+        text-align: center;
+        padding: 45px 20px 30px;
+      }
+
+      .judul h1 {
+        color: #2e7d32;
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      .judul p {
+        color: #666;
+      }
+
+      .konten {
+        max-width: 1150px;
+        margin: 0 auto;
+        padding: 0 25px 45px;
+      }
+
+      .artikel-utama {
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 40px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+      }
+
+      .artikel-utama img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .isi-utama {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .kategori {
+        display: inline-block;
+        color: #2e7d32;
+        background-color: #e8f5e9;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 12px;
+      }
+
+      .isi-utama h2 {
+        color: #245c2a;
+        font-size: 27px;
+        line-height: 1.4;
+        margin-bottom: 12px;
+      }
+
+      .isi-utama p {
+        color: #666;
+        margin-bottom: 18px;
+      }
+
+      .judul-artikel {
+        color: #2e7d32;
+        font-size: 26px;
+        margin-bottom: 20px;
+      }
+
+      .daftar-artikel {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .kartu-artikel {
+        background-color: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .kartu-artikel:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 7px 18px rgba(0, 0, 0, 0.1);
+      }
+
+      .kartu-artikel img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .isi-artikel {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+      }
+
+      .isi-artikel h3 {
+        color: #245c2a;
+        font-size: 19px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+
+      .isi-artikel p {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+
+      .tombol-blog {
+        display: inline-block;
+        margin-top: auto;
+        padding: 9px 15px;
+        background-color: #2e7d32;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .tombol-blog:hover {
+        background-color: #1b5e20;
+        color: white;
+      }
+
+      footer {
+        background-color: #2e7d32;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px;
+        }
+
+        .fix {
+          font-size: 22px;
+        }
+
+        nav ul {
+          gap: 16px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        nav ul li a {
+          font-size: 14px;
+        }
+
+        .judul {
+          padding: 35px 15px 25px;
+        }
+
+        .judul h1 {
+          font-size: 29px;
+        }
+
+        .konten {
+          padding: 0 15px 30px;
+        }
+
+        .artikel-utama {
+          padding: 15px;
+          gap: 18px;
+        }
+
+        .artikel-utama img {
+          height: 220px;
+        }
+
+        .isi-utama h2 {
+          font-size: 23px;
+        }
+
+        .daftar-artikel {
+          grid-template-columns: 1fr;
+        }
+
+        .kartu-artikel img {
+          height: 220px;
+        }
+
+        .judul-artikel {
+          font-size: 23px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="fix">Gunung Indonesia</div>
+
+      <ul>
+        <li><a href="beranda.html">Beranda</a></li>
+        <li><a href="gunung.html">Gunung</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+      </ul>
+    </nav>
+
+    <section class="judul">
+      <h1>Blog Gunung Indonesia</h1>
+      <p>
+        Temukan informasi, tips pendakian, dan cara menjaga keindahan alam
+        Indonesia.
+      </p>
+    </section>
+
+    <main class="konten">
+      <section class="artikel-utama">
+        <img src="../image/bg.jpeg" alt="Keindahan Gunung" />
+
+        <div class="isi-utama">
+          <span class="kategori">PENGETAHUAN</span>
+
+          <h2>Mengenal Keindahan Gunung di Indonesia</h2>
+
+          <p>
+            Indonesia memiliki banyak gunung dengan pemandangan, karakteristik,
+            dan jalur pendakian yang beragam. Kenali salah satu destinasi
+            pegunungan Indonesia dan daya tarik alamnya.
+          </p>
+
+          <a
+            href="https://www.indonesia.travel/id/id/destination/bali-nusa-tenggara/west-nusa-tenggara/gunung-rinjani"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="tombol-blog"
+          >
+            Baca Selengkapnya →
+          </a>
+        </div>
+      </section>
+
+      <h2 class="judul-artikel">Artikel</h2>
+
+      <section class="daftar-artikel">
+        <article class="kartu-artikel">
+          <img
+            src="../image/keindahan.jpeg"
+            alt="Pemandangan gunung"
+            loading="lazy"
+          />
+
+          <div class="isi-artikel">
+            <span class="kategori">PENGETAHUAN</span>
+
+            <h3>Mengenal Gunung di Indonesia</h3>
+
+            <p>
+              Pelajari karakteristik gunung, keindahan alam, dan informasi
+              destinasi pegunungan di Indonesia.
+            </p>
+
+            <a
+              href="https://www.indonesia.travel/id/id/destination/bali-nusa-tenggara/west-nusa-tenggara/gunung-rinjani"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="tombol-blog"
+            >
+              Baca Selengkapnya →
+            </a>
+          </div>
+        </article>
+
+        <article class="kartu-artikel">
+          <img
+            src="../image/pendaki.jpeg"
+            alt="Pendaki berjalan di jalur pegunungan"
+            loading="lazy"
+          />
+
+          <div class="isi-artikel">
+            <span class="kategori">TIPS PENDAKIAN</span>
+
+            <h3>Persiapan Sebelum Mendaki</h3>
+
+            <p>
+              Ketahui perlengkapan, persiapan fisik, dan hal penting yang perlu
+              diperhatikan sebelum melakukan pendakian.
+            </p>
+
+            <a
+              href="https://gunung-indonesia.com/panduan/persiapan-naik-gunung-pertama-kali/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="tombol-blog"
+            >
+              Baca Selengkapnya →
+            </a>
+          </div>
+        </article>
+
+        <article class="kartu-artikel">
+          <img
+            src="../image/kelestarian.jpeg"
+            alt="Hutan hijau yang asri"
+            loading="lazy"
+          />
+
+          <div class="isi-artikel">
+            <span class="kategori">LINGKUNGAN</span>
+
+            <h3>Menjaga Kelestarian Alam</h3>
+
+            <p>
+              Pelajari kebiasaan sederhana untuk menjaga kebersihan gunung,
+              mengurangi sampah, dan menghormati lingkungan alam.
+            </p>
+
+            <a
+              href="https://gunung-indonesia.com/panduan/etika-pendakian-leave-no-trace/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="tombol-blog"
+            >
+              Baca Selengkapnya →
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Gunung Indonesia.</p>
+    </footer>
+  </body>
+</html>
